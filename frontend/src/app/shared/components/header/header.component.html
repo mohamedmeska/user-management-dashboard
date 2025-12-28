@@ -1,0 +1,25 @@
+<header class="header">
+  <div class="header-title">
+    {{ title }}
+  </div>
+
+  <nav class="header-nav" *ngIf="isLoggedIn()">
+    <a routerLink="/users" routerLinkActive="active">Users</a>
+  </nav>
+
+  <div class="header-actions">
+    <button
+      class="secondary"
+      *ngIf="!isLoggedIn()"
+      (click)="onLogin()">
+      Login
+    </button>
+
+    <button
+      class="danger"
+      *ngIf="isLoggedIn()"
+      (click)="onLogout()">
+      Logout
+    </button>
+  </div>
+</header>
